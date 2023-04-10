@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useState } from 'react';
+import BookingList from '../components/BookingList';
 
 function App() {
+
+  // Initialize state for bookings as a empty array
+
+  const [bookings, setBookings] = useState([]);
+
+  function addBooking(newBooking) {
+    setBookings([...bookings, newBooking]);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
+      <body>
+        <div>
+          <BookingList bookings={bookings} />
+          <BookingForm onAddBooking={addBooking} />
+        </div>
+      </body>
     </div>
   );
 }
