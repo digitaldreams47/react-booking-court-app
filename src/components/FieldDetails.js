@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getFieldById } from '../services/fields';
+import { getById } from '../services/fields';
 import LoadingSpinner from './LoadingSpinner';
 
 function FieldDetails() {
@@ -9,7 +9,7 @@ function FieldDetails() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getFieldById(id).then(field => {
+    getById(id).then(field => {
      setField(field);
      setLoading(loading); 
     });

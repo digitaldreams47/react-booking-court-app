@@ -6,7 +6,7 @@ function FieldList() {
   const [fields, setFields] = useState([]);
 
   useEffect(() => {
-    getAllFields().then(setFields);
+    getAll().then(setFields);
   }, []);
 
   return (

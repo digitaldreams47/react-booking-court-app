@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import { createReservation } from '../services/reservations';
+import { useNavigate } from 'react-router-dom';
+import { create } from '../services/reservations';
 
 function ReservationForm({ field }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [date, setDate] = useState('');
-  const history = useHistory('');
+  const navigate = useNavigate('');
 
   const handleSubmit = event => {
     event.preventDefault();
-    createReservation({ name, email, date, field_id: field.id }).then(() => {
-      history.push('/reservations');
+    reservationsService.create({ name, email, date, field_id: field.id }).then(() => {
+      navigate.push('/reservations');
     });
   };
 

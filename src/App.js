@@ -1,14 +1,14 @@
 import '../src/App.css';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from './Header';
-import Footer from './Footer';
-import Home from './Home';
-import FieldList from './FieldList';
-import FieldDetails from './FieldDetails';
-import ReservationForm from './ReservationForm';
-import ReservationConfirmation from './ReservationConfirmation';
-import NotFound from './NotFound';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home';
+import FieldList from './components/FieldList';
+import FieldDetails from './components/FieldDetails';
+import ReservationForm from './components/ReservationForm';
+import ReservationConfirmation from './components/ReservationConfirmation';
+import NotFound from './components/NotFound';
 
 function App() {
 
@@ -27,7 +27,6 @@ function App() {
       </div>
       <main className='flex-grow-1'>
         <div className='container'>
-          <Switch>
             <Route exact path="/">
               <Home />
             </Route>
@@ -46,7 +45,6 @@ function App() {
             <Route>
               <NotFound />
             </Route>
-          </Switch>
         </div>
       </main>
       <Footer />
